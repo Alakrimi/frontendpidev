@@ -1,0 +1,52 @@
+<body>
+  
+  <div class="container">
+    <h2>Liste des catalogues</h2>
+    <div class="mb-3">
+
+      <div class="search-bar">
+        <form class="search-form d-flex align-items-right" method="POST" action="">
+          <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+          <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+        </form>
+      </div><!-- End Search Bar -->
+      <!-- Bouton "Ajouter un catalogue" -->
+      <button class="btn btn-success" (click)="redirectToCreateCatalogue()">Add catalogue</button>
+    </div>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Date de création</th>
+          <th>Date de modification</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let catalogue of catalogues">
+          
+          <td>{{ catalogue.id_catalogue}}</td>
+          <td>{{ catalogue.nom_catalogue }}</td>
+          <td>{{ catalogue.descriptionC }}</td>
+          <td>{{ catalogue.date_creation  }}</td>
+          <td>{{ catalogue.date_modification  }}</td>
+          
+
+          <td>
+            <!-- Boutons d'action -->
+            <button (click)="uploadFichier(catalogue.id_catalogue)" class="btn btn-success">Upload file</button>
+            <button (click)="redirectToEdit(catalogue.id_catalogue)" class="btn btn-primary">update</button>
+
+            <button (click)="supprimerCatalogue(catalogue.id_catalogue)" class="btn btn-danger">Delete</button>
+
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  
+  
+</body>

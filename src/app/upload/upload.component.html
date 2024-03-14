@@ -1,0 +1,21 @@
+<body>
+
+
+<!-- upload-file.component.html -->
+
+<div class="container">
+    <h2>Télécharger un fichier</h2>
+    <form (submit)="onSubmit()">
+      <div class="form-group">
+        <label for="file">Sélectionner un fichier :</label>
+        <input type="file" id="file" name="file" (change)="onFileSelected($event)" class="form-control-file">
+      </div>
+      <button type="submit" class="btn btn-primary">Télécharger</button>
+    </form>
+  </div>
+  
+
+
+
+
+</body>

@@ -1,0 +1,22 @@
+
+<div class="container">
+  <h2>Créer un Nouveau Catalogue</h2>
+  <form [formGroup]="catalogueForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="nomCatalogue">Nom du Catalogue:</label>
+      <input type="text" class="form-control" id="nomCatalogue" formControlName="nom_catalogue">
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <input type="text" class="form-control" id="description" formControlName="descriptionC">
+    </div>
+    <div class="form-group">
+      <label for="dateCreation">Date de Création:</label>
+      <input type="date" class="form-control" id="dateCreation" formControlName="date_creation">
+    </div>
+    <!-- Autres champs du formulaire -->
+    <button type="submit" class="btn btn-primary">Créer Catalogue</button>
+  </form>
+</div>
+
+
